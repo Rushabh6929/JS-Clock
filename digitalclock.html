@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiClock</title>
+
+    <style>
+    body{
+            background-color: black;
+        }
+        
+        #digiclock{
+            position: absolute;
+            margin-top: 50vh;
+            margin-left: 50vw;
+            transform: translateX(-50%) translateY(-50%);
+            color: rgb(157, 235, 11);
+            font-size: 5rem;
+            font-weight: bolder;
+            border: 2px rgb(157, 235, 11) dotted;
+            padding: 1rem;
+        }
+
+
+
+    </style>    
+
+</head>
+<body>
+
+    <div class="clock" id="digiclock" onload="showTime()"></div>
+
+    <script>
+        function showTime(){
+            var date = new Date();
+            var h =date.getHours();
+            var m =date.getMinutes();
+            var s= date.getSeconds();
+            var ampm ="AM";
+
+            if (h== 0){
+                h=12;
+
+            }
+            if (h > 12 ){
+                h=h-12;
+                ampm="PM";
+                
+            }
+         
+
+            var time = h + ":" + m + ":" + s + " " + ampm;
+        document.getElementById("digiclock").innerText= time;
+
+        document.getElementById("digiclock").textContent;
+
+        setTimeout(showTime, 1000);
+    }
+    showTime();
+
+    </script>
+
+
+    
+</body>
+</html>
